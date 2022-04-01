@@ -2,23 +2,23 @@ package person;
 
 public class PersonTest {
 	public static void main(String[] args) {
-		Person person = new Person();
-		person.age = 20;
-		person.name = "권정열";
-		person.selfIntroduce();
-		System.out.println(person.getPopulation());
+		Person person1 = new Person(20, "권정열");
+		Person person2 = new Person();
+		
+		System.out.println("전체 인구수는 " + person1.getPopulation());
+		person1.selfIntroduce();
+		person2.selfIntroduce();
 	}
 }
 
 class Person {
-	int numberOfPersons;
+	static int numberOfPersons;
 	int age;
 	String name;
 	
 	public Person() {
-		super();
-		this.age = 12;
-		this.name = "Anonymous";
+		age = 12;
+		name = "Anonymous";
 		numberOfPersons++;
 	}
 
@@ -26,6 +26,7 @@ class Person {
 		super();
 		this.age = age;
 		this.name = name;
+		numberOfPersons++;
 	}
 	
 	void selfIntroduce() {
@@ -33,7 +34,7 @@ class Person {
 	}
 	
 	int getPopulation() {
-		return numberOfPersons;
+		return Person.numberOfPersons;
 	}
 }
 
