@@ -8,15 +8,15 @@ public class App1 {
 
     public static void main(String[] args) {
 	Scanner sc = new Scanner(System.in);
-	System.out.print("¿µÈ­Á¦¸ñ:");
+	System.out.print("ì˜í™”ì œëª©:");
 	String title = sc.nextLine();
-	if (title.equals("¸í¿¹ÀÇÀü´ç")) {
+	if (title.equals("ëª…ì˜ˆì˜ì „ë‹¹")) {
 	    for (int i = 0; i < MovieTable.ROWS.length; i++) {
 		Object[] row = MovieTable.ROWS[i];
 		int audiences = (int) row[3];
 		String boxOffice = getBoxOffice(audiences);
 		if (boxOffice.equals("S")) {
-		    System.out.printf("Á¦¸ñ: %s, Àå¸£: %s, ÁÖÀÎ°ø: %s, °ü°´¼ö: %s, ÈïÇàµî±Ş: %s\n", row[0], row[1], row[2], audiences,
+		    System.out.printf("ì œëª©: %s, ì¥ë¥´: %s, ì£¼ì¸ê³µ: %s, ê´€ê°ìˆ˜: %s, í¥í–‰ë“±ê¸‰: %s\n", row[0], row[1], row[2], audiences,
 			    boxOffice);
 		}
 	    }
@@ -26,7 +26,7 @@ public class App1 {
 		if (row[0].equals(title)) {
 		    int audiences = (int) row[3];
 		    String boxOffice = getBoxOffice(audiences);
-		    System.out.printf("Á¦¸ñ: %s, Àå¸£: %s, ÁÖÀÎ°ø: %s, °ü°´¼ö: %s, ÈïÇàµî±Ş: %s\n", row[0], row[1], row[2], audiences,
+		    System.out.printf("ì œëª©: %s, ì¥ë¥´: %s, ì£¼ì¸ê³µ: %s, ê´€ê°ìˆ˜: %s, í¥í–‰ë“±ê¸‰: %s\n", row[0], row[1], row[2], audiences,
 			    boxOffice);
 		}
 	    }
