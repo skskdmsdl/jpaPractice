@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!--  EmpDAO emp = new EmpDAO() -->
+	<bean id="emp" class="myspring.EmpDAO"></bean>
+	<bean id="empService" class="myspring.EmpServiceClass">
+		<property name="dao" ref="emp"></property> <!-- setter dao -> setDao -->
+		<!-- ref는 bean id랑 같아야함 name은 클래스에 셋터해준거 -->
+	</bean>
+	
+</beans>
