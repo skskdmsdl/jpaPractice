@@ -2,17 +2,18 @@ package myspring;
 
 import java.util.List;
 
-//empservice에 선언된 메서드를 재정의/정의하지 않았기에 오류가 뜸
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component("empService")
 public class EmpServiceImpl implements EmpService{
-	
-	static EmpDAO dao;
-	public void setDao(EmpDAO dao) {
-	      this.dao = dao;
-	   }
+
+	@Autowired
+	EmpDAO dao;
 
 	@Override
 	public List<EmpVO> getList(int deptId) throws Exception {
-		
+
 		return dao.getEmpListByDeptId(deptId);
 	}
 
