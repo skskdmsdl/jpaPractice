@@ -1,4 +1,4 @@
-package crud;
+package status;
 
 import java.sql.Date;
 
@@ -7,7 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-//@Entity
+@Entity
 @Table(name="my_order")
 public class MyOrder {
 
@@ -17,5 +17,7 @@ public class MyOrder {
 
 	@Column(name="order_date")
 	Date orderDate;
+
+
 
 }
