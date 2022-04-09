@@ -1,4 +1,4 @@
-package onetomany;
+package bidirection;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -21,9 +21,9 @@ public class Emp {
 	@Column(name="first_name")
 	String firstName;
 	
-//	@ManyToOne
-//	@JoinColumn(name="department_id")
-//	Dept dept;
+	@ManyToOne
+	@JoinColumn(name="department_id")
+	Dept dept;
 	
 	@Override
 	public String toString() {
