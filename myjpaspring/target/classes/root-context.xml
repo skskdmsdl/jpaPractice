@@ -10,7 +10,7 @@
 		http://www.springframework.org/schema/data/jpa
 		https://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
 
-	<!-- <jpa:repositories base-package="kosta.edu"/> -->
+	<!-- <jpa:repositories base-package="jpa.study"/> -->
 
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	<bean id="dataSource"

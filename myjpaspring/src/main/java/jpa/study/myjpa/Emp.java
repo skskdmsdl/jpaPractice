@@ -14,16 +14,16 @@ public class Emp {
 	@Id
 	@Column(name="employee_id")
 	Integer employeeId;
-	
+
 	@Column(name="last_name")
 	String lastName;
-	
+
 	@Column(name="first_name")
 	String firstName;
-	
+
 	@Column(name="department_id")
 	Integer departmentId;
-	
+
 	@Override
 	public String toString() {
 		return "Emp [employeeId=" + employeeId + ", lastName=" + lastName + ", firstName=" + firstName + "]";
@@ -44,9 +44,9 @@ public class Emp {
 	public Integer getDepartmentId() {
 		return departmentId;
 	}
-	
-	
 
-	
+
+
+
 
 }
