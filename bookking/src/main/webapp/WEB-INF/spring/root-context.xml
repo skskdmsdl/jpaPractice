@@ -18,12 +18,6 @@
 		    <property name="username" value="root"/>
 		    <property name="password" value="rootroot"/>
 	</bean> -->
-	<bean id="dataSource" destroy-method="close" class="org.apache.commons.dbcp2.BasicDataSource">  
-		    <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-		    <property name="url" value="jdbc:mysql://localhost:3306/ss?useSSL=false" />
-		    <property name="username" value="root"/>
-		    <property name="password" value="rootroot"/>
-	</bean>
 	<!-- 트랜잭션 추가부분 
 	<bean id="transactionManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
@@ -69,6 +63,13 @@
 	        </props>
 	    </property>
 	</bean> 
+	
+	<bean id="dataSource" destroy-method="close" class="org.apache.commons.dbcp2.BasicDataSource">  
+		    <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+		    <property name="url" value="jdbc:mysql://localhost:3306/ss?useSSL=false" />
+		    <property name="username" value="root"/>
+		    <property name="password" value="0000"/>
+	</bean>
 <!-- 	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
 	    <property name="dataSource" ref="dataSource" />
 	</bean> -->

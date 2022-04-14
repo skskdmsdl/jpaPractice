@@ -9,12 +9,16 @@ import org.springframework.stereotype.Service;
 
 import kr.co.bookking.VO.UserVO;
 import kr.co.bookking.dao.UserDAO;
+import kr.co.bookking.repository.UserRepository;
 
 @Service
 public class UserServiceImpl implements UserService {
 	
 	@Autowired
 	UserDAO userDao;
+	
+	@Autowired
+	UserRepository ur;
 	
 	//회원가입
 	@Override
@@ -31,10 +35,11 @@ public class UserServiceImpl implements UserService {
 	//로그인
 	@Override
 	public String login(String userId, String userPw) throws Exception {
-		Map<String, String> params = new HashMap<String, String>();
-		params.put("userId", userId);
-		params.put("userPassword", userPw);
-		return userDao.login(params);
+		return ur.findByUserIdAndUserPassword(userId, userPw).getUserId();
+//		Map<String, String> params = new HashMap<String, String>();
+//		params.put("userId", userId);
+//		params.put("userPassword", userPw);
+//		return userDao.login(params);
 	}
 
 	/* 사용자 정보 가져오기*/

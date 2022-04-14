@@ -13,12 +13,17 @@ import org.springframework.transaction.annotation.Transactional;
 
 import kr.co.bookking.VO.QnaVO;
 import kr.co.bookking.dao.QnaDAO;
+import kr.co.bookking.entity.QnaEntity;
+import kr.co.bookking.repository.QnaRepository;
 
 @Service
 public class QnaServiceImpl implements QnaService{
 	
 	@Autowired
 	QnaDAO dao;
+	
+	@Autowired
+	QnaRepository qr;
 	 
 	@Override
 	public List<QnaVO> getQnaListByBookId(int bookId) throws Exception{
@@ -27,14 +32,23 @@ public class QnaServiceImpl implements QnaService{
 	
 	@Override
 	public String getQnaContentByQnaId(int qnaId) throws Exception{
-		
-		return dao.getQnaContentByQnaId(qnaId);
+		return qr.getById(qnaId).getQnaContents();
+		//return dao.getQnaContentByQnaId(qnaId);
 	}
 	
 	@Transactional
 	@Override
 	public int insertQnaContent(QnaVO qnaVO) throws Exception {
-		return dao.insertQnaContent(qnaVO);
+		QnaEntity qe = new QnaEntity() ;
+		qe.setQnaUserId(qnaVO.getQnaUserId());
+		qe.setQnaBookId(qnaVO.getQnaBookId());
+		qe.setQnatitle(qnaVO.getQnaTitle());
+		qe.setQnaContents(qnaVO.getQnaContents());
+		qe = qr.save(qe);
+		
+		if(qe != null) return 1;
+		return 0;
+		//return dao.insertQnaContent(qnaVO);
 	}	
 
 }
