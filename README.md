@@ -6,7 +6,8 @@ jpa 기초 다지기
 * 공부기간 : 2022.03.20 ~ 2020.04.15
 
 # Skills
-* jpa
-* MyBatis
 * Java
+* Spring
+* MyBatis
+* jpa
 * Hibernate
