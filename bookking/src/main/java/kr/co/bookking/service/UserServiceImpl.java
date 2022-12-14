@@ -45,7 +45,7 @@ public class UserServiceImpl implements UserService {
 	/* 사용자 정보 가져오기*/
 	@Override
 	public UserVO getUserInfo(String userId) throws Exception {
-		return userDao.getUserInfo(userId);
+		return ur.findById(userId);
 	}
 
 	@Override
@@ -60,6 +60,6 @@ public class UserServiceImpl implements UserService {
 	
 	@Override
 	public String getUserPassword(String userId) throws Exception {
-		return userDao.getUserPassword(userId);
+		return ur.findById(userId).getPassword();
 	}
 }
